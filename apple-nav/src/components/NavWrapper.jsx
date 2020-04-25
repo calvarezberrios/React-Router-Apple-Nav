@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
+import logo from "../images/pokemon_logo.png";
+import pokeball from "../images/pokeball.png";
 import { Collapse,
     Navbar,
     NavbarToggler,
-    NavbarBrand,
     Nav,
     NavItem,
-    NavLink,
     NavbarText } from "reactstrap";
 import SubNav from "./SubNav";
+import { Link} from "react-router-dom";
 
 
 const NavWrapper = () => {
@@ -19,6 +20,11 @@ const NavWrapper = () => {
     const openSub = () => {
         setIsSubOpen(true);
         setIsOpen(false);
+        
+    }
+    const closeSub = () => {
+        setIsSubOpen(false);
+        setIsOpen(false);
     }
 
     window.addEventListener("resize", (e) => {
@@ -27,19 +33,25 @@ const NavWrapper = () => {
     
     return (
         <header>
-            <Navbar color="dark" dark expand="md">
+            <Navbar color="danger" dark expand="md">
 
                 <NavbarToggler onClick={toggle} />
-                <NavbarBrand href="/">{windowWidth > 600 ? "Celestial Web Development" : "WebDev"}</NavbarBrand>
+
+                <Link to = "/" onClick = {closeSub}>
+                    
+                        {<img width = {windowWidth > 600 ? "150" : "55"} src = {windowWidth > 600 ? logo : pokeball}  alt = "Logo" />}
+                    
+                </Link>
+                
                 <NavbarText>Mannie's Portfolio</NavbarText>
 
                 <Collapse isOpen={isOpen} navbar>
                     <Nav className="mr-auto" nabbar>
                         <NavItem>
-                            <NavLink href="#" onClick = {openSub}>Link 1</NavLink>
+                            <Link to = "/linkone" onClick = {openSub}>Link 1</Link>
                         </NavItem>
                         <NavItem>
-                            <NavLink href="#" onClick = {openSub}>Link 2</NavLink>
+                            <Link to = "/linktwo" onClick = {openSub}>Link 2</Link>
                         </NavItem>
                     </Nav>
                 </Collapse>

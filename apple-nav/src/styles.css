@@ -6,7 +6,7 @@
 }
 
 nav * {
-  color: white !important;
+  color: #ffee06 !important;
 }
 
 .navbar {
@@ -35,68 +35,7 @@ nav * {
   margin-right: 80px;
 } */
 
-.subNav {
-  width: 100%;
-  height: 125px;
-  overflow-x: scroll;
-  -ms-overflow-style: none;
-  scroll-behavior: smooth;
-}
 
-.subNav::-webkit-scrollbar {
-  display: none;
-}
-
-.subNavLinks {
-  width: auto;
-  height: 100%;
-  margin: 0 auto;
-  
-  white-space: nowrap;
-  /* 
-  display: flex;
-  align-items: center;
-  justify-content: center; */
-}
-
-.subNavLinks button {
-  position:absolute;
-  height: 105px;
-  display: none;
-  padding: 40px 10px;
-  background: white;
-  border: none;
-}
-
-.subNavLinks .prev{
-  border-right: 1px solid #ccc;
-  left: 0;
-  margin-right: 20px;
-}
-
-.subNavLinks .next{
-  border-left: 1px solid #ccc;
-  top: 56px;
-  right: 0;
-  margin-left: 20px;
-}
-
-.subNavLinks a {
-  display: inline-block;
-  width: 120px;
-  height: 100%;
-  padding: 40px 0px;
-}
-
-.subNavLinks a:first-child {
-  padding-left: 100px;
-}
-
-/* @media only screen and (max-width: 970px) {
-  .subNavLinks button {
-    display: block;
-  }
-} */
 
 @media only screen and (max-width: 767px) {
   .navbar {
